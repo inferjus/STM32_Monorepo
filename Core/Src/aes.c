@@ -22,9 +22,9 @@
 
 /* USER CODE BEGIN 0 */
 
-uint8_t PlaintxtData[] = "STM32U0_SECURE!!";
-uint8_t CipherOutput[16] = { 0 };
-uint8_t DecryptedData[16] = { 0 };
+//uint8_t plaintext[20] = "STM32U0 plaintext";
+//uint8_t cipherOutput[20] = { 0 };
+//uint8_t decryptedData[20] = { 0 };
 
 /* USER CODE END 0 */
 
@@ -104,22 +104,23 @@ void HAL_CRYP_MspDeInit(CRYP_HandleTypeDef *crypHandle) {
 
 /* USER CODE BEGIN 1 */
 
-void SecureComms_EncryptPayload(void) {
-	if (HAL_CRYP_Encrypt(&hcryp, (uint32_t*) PlaintxtData, 16, (uint32_t*) CipherOutput, HAL_MAX_DELAY) != HAL_OK) {
-
+void SecureComms_EncryptPayload(uint32_t *input, uint16_t inputSize, uint32_t *output) {
+	if (HAL_CRYP_Encrypt(&hcryp, input, inputSize, output, HAL_MAX_DELAY) != HAL_OK) {
 		Error_Handler();
 	}
 }
 
-void SecureComms_DecryptPayload(void) {
-	/* CBC requires reinitialisation for summary symmetry */
+void SecureComms_DecryptPayload(uint32_t *input, uint32_t *output, uint16_t outputSize) {
+	/* After encryption in CBC mode reinitialisation is required
+	 so the last generated block in AES hardware module is not used.
+	 It ensures that IV will be used and not the last block.
+	 */
 	HAL_CRYP_DeInit(&hcryp);
 	MX_AES_Init();
 
-	if (HAL_CRYP_Decrypt(&hcryp, (uint32_t*) CipherOutput, 16, (uint32_t*) DecryptedData, HAL_MAX_DELAY) != HAL_OK) {
+	if (HAL_CRYP_Decrypt(&hcryp, input, outputSize, output, HAL_MAX_DELAY) != HAL_OK) {
 		Error_Handler();
 	}
-
 }
 
 /* USER CODE END 1 */

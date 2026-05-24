@@ -48,7 +48,9 @@ COM_InitTypeDef BspCOMInit;
 __IO uint32_t BspButtonState = BUTTON_RELEASED;
 
 /* USER CODE BEGIN PV */
-
+uint8_t plaintext[20] = "STM32U0 plaintext";
+uint8_t cipherOutput[20] = { 0 };
+uint8_t decryptedData[20] = { 0 };
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -142,8 +144,13 @@ int main(void)
       Security_GetRandomSeed_IT();
 #endif
 
-      SecureComms_EncryptPayload();
-      SecureComms_DecryptPayload();
+      printf("\r\n");
+      printf("plaintext:%s\r\n", plaintext);
+      SecureComms_EncryptPayload((uint32_t *)plaintext, sizeof(plaintext), (uint32_t *)cipherOutput);
+      printf("cipherOutput:%s\r\n", cipherOutput);
+      SecureComms_DecryptPayload((uint32_t *)cipherOutput, (uint32_t *)decryptedData, sizeof(decryptedData));
+      printf("decryptedData:%s\r\n", decryptedData);
+      printf("\r\n");
 
     }
 
@@ -151,7 +158,10 @@ int main(void)
     if (randomSeedReady == 1) {
 	  randomSeedReady = 0;
 	  printf("Wygenerowano seed: %lu\r\n", randomSeed);
+	  printf("\r\n\r\n");
 	}
+
+
 #endif
 
     /* USER CODE END WHILE */

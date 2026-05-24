@@ -42,8 +42,8 @@ void MX_AES_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
-void SecureComms_EncryptPayload(void);
-void SecureComms_DecryptPayload(void);
+void SecureComms_EncryptPayload(uint32_t *input, uint16_t inputSize, uint32_t *output);
+void SecureComms_DecryptPayload(uint32_t *input, uint32_t *output, uint16_t outputSize);
 
 /* USER CODE END Prototypes */
 
