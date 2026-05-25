@@ -156,10 +156,7 @@ void SecureComms_EncryptPayload(uint32_t *input, uint16_t inputSize, uint32_t *o
 }
 
 void SecureComms_DecryptPayload(uint32_t *input, uint32_t *output, uint16_t outputSize) {
-	/* After encryption in CBC mode reinitialisation is required
-	 so the last generated block in AES hardware module is not used.
-	 It ensures that IV will be used and not the last block.
-	 */
+	/* If key and IV configuration is not always being skipped, reinitialisation is required */
 	if (hcryp.Init.KeyIVConfigSkip != CRYP_KEYIVCONFIG_ALWAYS) {
 		HAL_CRYP_DeInit(&hcryp);
 		MX_AES_Init();
@@ -182,11 +179,7 @@ void SecureComms_EncryptPayload_DMA(uint32_t *input, uint16_t inputSize, uint32_
 
 void SecureComms_DecryptPayload_DMA(uint32_t *input, uint32_t *output, uint16_t outputSize) {
 	aesDmaState = AES_DMA_DECRYPTING;
-
-	/* After encryption in CBC mode reinitialisation is required
-	 so the last generated block in AES hardware module is not used.
-	 It ensures that IV will be used and not the last block.
-	 */
+	/* If key and IV configuration is not always being skipped, reinitialisation is required */
 	if (hcryp.Init.KeyIVConfigSkip != CRYP_KEYIVCONFIG_ALWAYS) {
 		HAL_CRYP_DeInit(&hcryp);
 		MX_AES_Init();
@@ -206,6 +199,8 @@ void HAL_CRYP_OutCpltCallback(CRYP_HandleTypeDef *hcryp) {
 			break;
     	case AES_DMA_DECRYPTING:
     		aesDmaState=AES_DMA_DECRYPTED;
+    		break;
+    	default:
     		break;
     	}
 
