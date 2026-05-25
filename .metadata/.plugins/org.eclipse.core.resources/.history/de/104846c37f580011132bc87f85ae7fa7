@@ -147,8 +147,7 @@ int main(void)
 #ifndef RNG_VIA_INTERRUPT
       randomSeed=Security_GetRandomSeed();
 #else
-//      randomSeedReady = 0;
-      currentRngMode = RNG_MODE_SEED;
+      randomSeedReady = 0;
       Security_GetRandomSeed_IT();
 #endif //RNG_VIA_INTERRUPT
 
@@ -180,7 +179,6 @@ int main(void)
 #else
 		aesDmaState=AES_DMA_WAITING_FOR_IV;
 		printf("Previous IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
-		currentRngMode = RNG_MODE_IV;
 		SecureComms_GenerateNewIV_IT();
 		break;
 #endif //RNG_VIA_INTERRUPT
@@ -207,7 +205,9 @@ int main(void)
 		}
 		break;
 	case AES_DMA_ENCRYPTED:
-		printf("cipherOutput:%s\r\n", cipherOutput);
+		for(int i = 0; i < AES_BUF_SIZE; i++) {
+		    printf("%02X", cipherOutput[i]); // Drukuj każdy bajt jako 2 znaki HEX
+		}
 		SecureComms_DecryptPayload_DMA((uint32_t*) cipherOutput, (uint32_t*) decryptedData, sizeof(decryptedData));
 		break;
 	case AES_DMA_DECRYPTED:

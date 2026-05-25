@@ -38,16 +38,6 @@ extern RNG_HandleTypeDef hrng;
 
 #define RNG_VIA_INTERRUPT
 
-
-typedef enum {
-    RNG_MODE_IDLE,
-    RNG_MODE_SEED,
-    RNG_MODE_IV
-} RngMode_enum;
-
-
-extern volatile RngMode_enum currentRngMode;
-
 /* USER CODE END Private defines */
 
 void MX_RNG_Init(void);

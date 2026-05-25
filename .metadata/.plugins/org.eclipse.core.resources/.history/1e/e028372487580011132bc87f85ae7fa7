@@ -43,10 +43,10 @@ typedef enum {
     RNG_MODE_IDLE,
     RNG_MODE_SEED,
     RNG_MODE_IV
-} RngMode_enum;
+} rngMode_enum;
 
 
-extern volatile RngMode_enum currentRngMode;
+extern volatile rngMode_enum currentRngMode;
 
 /* USER CODE END Private defines */
 

@@ -13,11 +13,6 @@
 #include "aes.h"
 
 
-
-
-
-
-
 typedef struct {
 	uint32_t ivAes[sizeof(pInitVectAES)];
 	uint8_t generatingStage;

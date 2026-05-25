@@ -150,6 +150,7 @@ int main(void)
 //      randomSeedReady = 0;
       currentRngMode = RNG_MODE_SEED;
       Security_GetRandomSeed_IT();
+      Security_GetRandomSeed_IT();
 #endif //RNG_VIA_INTERRUPT
 
 #ifndef AES_VIA_DMA
@@ -180,7 +181,6 @@ int main(void)
 #else
 		aesDmaState=AES_DMA_WAITING_FOR_IV;
 		printf("Previous IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
-		currentRngMode = RNG_MODE_IV;
 		SecureComms_GenerateNewIV_IT();
 		break;
 #endif //RNG_VIA_INTERRUPT

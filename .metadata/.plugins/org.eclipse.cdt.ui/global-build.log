@@ -655,3 +655,195 @@ Finished building: default.size.stdout
  
 Finished building: Nucleo-U083RC_-_RNG_and_AES.list
  
+23:22:22 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Nucleo-U083RC_-_RNG_and_AES.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\Nucleo-U083RC\RNG_and_AES\STM32U083RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-U083RC_-_RNG_and_AES.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo-U083RC_-_RNG_and_AES.elf
+ 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+arm-none-eabi-objdump -h -S Nucleo-U083RC_-_RNG_and_AES.elf  > "Nucleo-U083RC_-_RNG_and_AES.list"
+   text	   data	    bss	    dec	    hex	filename
+  30968	    188	   2540	  33696	   83a0	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo-U083RC_-_RNG_and_AES.list
+ 
+23:24:02 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Nucleo-U083RC_-_RNG_and_AES.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\Nucleo-U083RC\RNG_and_AES\STM32U083RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-U083RC_-_RNG_and_AES.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo-U083RC_-_RNG_and_AES.elf
+ 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+arm-none-eabi-objdump -h -S Nucleo-U083RC_-_RNG_and_AES.elf  > "Nucleo-U083RC_-_RNG_and_AES.list"
+   text	   data	    bss	    dec	    hex	filename
+  31044	    188	   2540	  33772	   83ec	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo-U083RC_-_RNG_and_AES.list
+ 
+23:27:14 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Nucleo-U083RC_-_RNG_and_AES.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\Nucleo-U083RC\RNG_and_AES\STM32U083RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-U083RC_-_RNG_and_AES.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo-U083RC_-_RNG_and_AES.elf
+ 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+arm-none-eabi-objdump -h -S Nucleo-U083RC_-_RNG_and_AES.elf  > "Nucleo-U083RC_-_RNG_and_AES.list"
+   text	   data	    bss	    dec	    hex	filename
+  30956	    188	   2540	  33684	   8394	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo-U083RC_-_RNG_and_AES.list
+ 
+23:29:20 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Nucleo-U083RC_-_RNG_and_AES.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\Nucleo-U083RC\RNG_and_AES\STM32U083RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-U083RC_-_RNG_and_AES.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo-U083RC_-_RNG_and_AES.elf
+ 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+arm-none-eabi-objdump -h -S Nucleo-U083RC_-_RNG_and_AES.elf  > "Nucleo-U083RC_-_RNG_and_AES.list"
+   text	   data	    bss	    dec	    hex	filename
+  30896	    188	   2540	  33624	   8358	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo-U083RC_-_RNG_and_AES.list
+ 
+23:34:43 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rng.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rng.d" -MT"Core/Src/rng.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rng.o"
+arm-none-eabi-gcc "../Core/Src/rngForAes.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rngForAes.d" -MT"Core/Src/rngForAes.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rngForAes.o"
+../Core/Src/rng.c: In function 'HAL_RNG_ReadyDataCallback':
+../Core/Src/rng.c:173:21: error: 'iv_word_count' undeclared (first use in this function)
+  173 |                 if (iv_word_count < 4) {
+      |                     ^~~~~~~~~~~~~
+../Core/Src/rng.c:173:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/rng.c:179:25: error: 'iv_ready' undeclared (first use in this function)
+  179 |                         iv_ready = 1;
+      |                         ^~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/rng.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:35:26 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/rng.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rng.d" -MT"Core/Src/rng.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rng.o"
+../Core/Src/rng.c: In function 'HAL_RNG_ReadyDataCallback':
+../Core/Src/rng.c:174:34: error: 'reshIv' undeclared (first use in this function); did you mean 'freshIv'?
+  174 |                     pInitVectAES[reshIv.generatingStage] = random32bit;
+      |                                  ^~~~~~
+      |                                  freshIv
+../Core/Src/rng.c:174:34: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:49: Core/Src/rng.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:35:33 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/rng.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rng.d" -MT"Core/Src/rng.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rng.o"
+../Core/Src/rng.c: In function 'HAL_RNG_ReadyDataCallback':
+../Core/Src/rng.c:175:21: error: 'reshIv' undeclared (first use in this function); did you mean 'freshIv'?
+  175 |                     reshIv.generatingStage++;
+      |                     ^~~~~~
+      |                     freshIv
+../Core/Src/rng.c:175:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:49: Core/Src/rng.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:35:38 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/rng.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rng.d" -MT"Core/Src/rng.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rng.o"
+../Core/Src/rng.c: In function 'HAL_RNG_ReadyDataCallback':
+../Core/Src/rng.c:176:25: error: 'reshIv' undeclared (first use in this function); did you mean 'freshIv'?
+  176 |                     if (reshIv.generatingStage < 4) {
+      |                         ^~~~~~
+      |                         freshIv
+../Core/Src/rng.c:176:25: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:49: Core/Src/rng.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+23:35:42 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/rng.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rng.d" -MT"Core/Src/rng.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rng.o"
+arm-none-eabi-gcc -o "Nucleo-U083RC_-_RNG_and_AES.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\Nucleo-U083RC\RNG_and_AES\STM32U083RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-U083RC_-_RNG_and_AES.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo-U083RC_-_RNG_and_AES.elf
+ 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+arm-none-eabi-objdump -h -S Nucleo-U083RC_-_RNG_and_AES.elf  > "Nucleo-U083RC_-_RNG_and_AES.list"
+   text	   data	    bss	    dec	    hex	filename
+  30916	    188	   2540	  33644	   836c	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo-U083RC_-_RNG_and_AES.list
+ 
+23:35:44 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30916	    188	   2540	  33644	   836c	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+23:35:45 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30916	    188	   2540	  33644	   836c	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+23:37:03 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Nucleo-U083RC_-_RNG_and_AES.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\Nucleo-U083RC\RNG_and_AES\STM32U083RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-U083RC_-_RNG_and_AES.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo-U083RC_-_RNG_and_AES.elf
+ 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+arm-none-eabi-objdump -h -S Nucleo-U083RC_-_RNG_and_AES.elf  > "Nucleo-U083RC_-_RNG_and_AES.list"
+   text	   data	    bss	    dec	    hex	filename
+  30984	    188	   2540	  33712	   83b0	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo-U083RC_-_RNG_and_AES.list
+ 
+00:12:15 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rng.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rng.d" -MT"Core/Src/rng.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rng.o"
+arm-none-eabi-gcc "../Core/Src/rngForAes.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rngForAes.d" -MT"Core/Src/rngForAes.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rngForAes.o"
+In file included from ../Core/Src/main.c:23:
+../Core/Inc/rng.h:42:17: error: unknown type name 'rngMode_enum'
+   42 | extern volatile rngMode_enum currentRngMode;
+      |                 ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Inc/rngForAes.h:12,
+                 from ../Core/Src/rngForAes.c:8:
+../Core/Inc/rng.h:42:17: error: unknown type name 'rngMode_enum'
+   42 | extern volatile rngMode_enum currentRngMode;
+      |                 ^~~~~~~~~~~~
+In file included from ../Core/Src/rng.c:21:
+../Core/Inc/rng.h:42:17: error: unknown type name 'rngMode_enum'
+   42 | extern volatile rngMode_enum currentRngMode;
+      |                 ^~~~~~~~~~~~
+../Core/Src/rng.c:32:23: error: conflicting types for 'currentRngMode'; have 'rngMode_enum'
+   32 | volatile rngMode_enum currentRngMode = RNG_MODE_IDLE;
+      |                       ^~~~~~~~~~~~~~
+../Core/Inc/rng.h:42:30: note: previous declaration of 'currentRngMode' with type 'int'
+   42 | extern volatile rngMode_enum currentRngMode;
+      |                              ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/rngForAes.o] Error 1
+make: *** [Core/Src/subdir.mk:49: Core/Src/rng.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+00:12:34 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rng.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rng.d" -MT"Core/Src/rng.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rng.o"
+arm-none-eabi-gcc "../Core/Src/rngForAes.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rngForAes.d" -MT"Core/Src/rngForAes.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rngForAes.o"
+arm-none-eabi-gcc -o "Nucleo-U083RC_-_RNG_and_AES.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\Nucleo-U083RC\RNG_and_AES\STM32U083RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-U083RC_-_RNG_and_AES.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Nucleo-U083RC_-_RNG_and_AES.elf
+ 
+arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
+arm-none-eabi-objdump -h -S Nucleo-U083RC_-_RNG_and_AES.elf  > "Nucleo-U083RC_-_RNG_and_AES.list"
+   text	   data	    bss	    dec	    hex	filename
+  30984	    188	   2540	  33712	   83b0	Nucleo-U083RC_-_RNG_and_AES.elf
+Finished building: default.size.stdout
+ 
+Finished building: Nucleo-U083RC_-_RNG_and_AES.list
+ 

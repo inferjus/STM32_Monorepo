@@ -180,7 +180,6 @@ int main(void)
 #else
 		aesDmaState=AES_DMA_WAITING_FOR_IV;
 		printf("Previous IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
-		currentRngMode = RNG_MODE_IV;
 		SecureComms_GenerateNewIV_IT();
 		break;
 #endif //RNG_VIA_INTERRUPT

@@ -29,7 +29,7 @@ volatile uint32_t randomSeed = 0;
 volatile uint8_t randomSeedReady = 0;
 
 
-volatile RngMode_enum currentRngMode = RNG_MODE_IDLE;
+volatile rngMode_enum currentRngMode = RNG_MODE_IDLE;
 
 /* USER CODE END 0 */
 
@@ -145,30 +145,46 @@ HAL_StatusTypeDef Security_GetRandomSeed_IT(void) {
 }
 
 void HAL_RNG_ReadyDataCallback(RNG_HandleTypeDef *hrng, uint32_t random32bit) {
-
+//	if (hrng->Instance == RNG) {
+//
+//		if(aesDmaState==AES_DMA_WAITING_FOR_IV) {
+//			//save new random number as part of incoming IV
+//			if (freshIv.generatingStage<sizeof(pInitVectAES)) {
+//				hcryp.Init.pInitVect[freshIv.generatingStage]=random32bit;
+//				freshIv.generatingStage++;
+//
+//				//generate next number if needed
+//				if (freshIv.generatingStage<sizeof(pInitVectAES)) {
+//					HAL_RNG_GenerateRandomNumber_IT(hrng);
+//				}
+//				else {
+//					freshIv.ready=1;
+//				}
+//			}
+//		}
+//		else {
+//			randomSeed = random32bit;
+//			randomSeedReady = 1;
+//		}
+//	}
 	if (hrng->Instance == RNG) {
-		//IV
 	    if (currentRngMode == RNG_MODE_IV) {
-	    	//save new random number as part of incoming IV
+	        // Logika generowania IV
 	        if (freshIv.generatingStage<sizeof(pInitVectAES)) {
-	            pInitVectAES[freshIv.generatingStage] = random32bit;
-	            freshIv.generatingStage++;
-
-	            //generate next number if needed
-	            if (freshIv.generatingStage < 4) {
+	            pInitVectAES[reshIv.generatingStage] = random32bit;
+	            reshIv.generatingStage++;
+	            if (reshIv.generatingStage < 4) {
 	                HAL_RNG_GenerateRandomNumber_IT(hrng);
-	            }
-	            else {
+	            } else {
 	            	freshIv.ready=1;
-	                currentRngMode = RNG_MODE_IDLE;
+	                currentRngMode = RNG_MODE_IDLE; // Zakończono
 	            }
 	        }
-	    }
-		//seed
-	    else if (currentRngMode == RNG_MODE_SEED) {
+	    } else if (currentRngMode == RNG_MODE_SEED) {
+	        // Logika generowania Seeda
 	        randomSeed = random32bit;
 	        randomSeedReady = 1;
-	        currentRngMode = RNG_MODE_IDLE;
+	        currentRngMode = RNG_MODE_IDLE; // Zakończono
 	    }
 	  }
 }

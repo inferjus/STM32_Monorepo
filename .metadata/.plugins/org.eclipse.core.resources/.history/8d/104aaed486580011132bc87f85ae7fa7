@@ -13,7 +13,11 @@
 #include "aes.h"
 
 
-
+typedef enum {
+    RNG_MODE_IDLE,
+    RNG_MODE_SEED,
+    RNG_MODE_IV
+} rngMode_enum;
 
 
 

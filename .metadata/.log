@@ -85,3 +85,6 @@ COM6
 
 !ENTRY org.eclipse.cdt.core 1 0 2026-05-25 20:08:16.019
 !MESSAGE Indexed 'Nucleo-U083RC_-_RNG_and_AES' (33 sources, 170 headers) in 2,4 sec: 14 914 declarations; 63 624 references; 1 unresolved inclusions; 66 syntax errors; 240 unresolved names (0,3%)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-05-25 23:37:12.973
+!MESSAGE Request monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIStack$5@73c3eb98): Status CANCEL: unknown code=1 ' resulted in a cancel status: Status CANCEL: unknown code=1 , even though the request is not set to cancel.
