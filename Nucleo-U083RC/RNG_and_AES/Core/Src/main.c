@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2026 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2026 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -49,10 +49,14 @@ COM_InitTypeDef BspCOMInit;
 __IO uint32_t BspButtonState = BUTTON_RELEASED;
 
 /* USER CODE BEGIN PV */
+
 #define AES_BUF_SIZE 32
 uint8_t plaintext[AES_BUF_SIZE] = "STM32U0 plaintext .";
 uint8_t cipherOutput[AES_BUF_SIZE] = { 0 };
 uint8_t decryptedData[AES_BUF_SIZE] = { 0 };
+
+uint32_t freshIvAes[4] = { 0 };
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -150,6 +154,12 @@ int main(void)
 #ifndef AES_VIA_DMA
       printf("\r\n");
       printf("plaintext:%s\r\n", plaintext);
+
+#ifndef RNG_VIA_INTERRUPT
+		SecureComms_GenerateNewIV(); //randomly generated IV
+		printf("New IV: %08lX%08lX%08lX%08lX\r\n", pInitVectAES[0], pInitVectAES[1], pInitVectAES[2], pInitVectAES[3]);
+#endif
+
       SecureComms_EncryptPayload((uint32_t *)plaintext, sizeof(plaintext), (uint32_t *)cipherOutput);
       printf("cipherOutput:%s\r\n", cipherOutput);
       SecureComms_DecryptPayload((uint32_t *)cipherOutput, (uint32_t *)decryptedData, sizeof(decryptedData));
@@ -160,6 +170,12 @@ int main(void)
 	case AES_DMA_OFF:
 		printf("\r\n");
 		printf("plaintext:%s\r\n", plaintext);
+
+#ifndef RNG_VIA_INTERRUPT
+		SecureComms_GenerateNewIV(); //randomly generated IV
+		printf("New IV: %08lX%08lX%08lX%08lX\r\n", pInitVectAES[0], pInitVectAES[1], pInitVectAES[2], pInitVectAES[3]);
+#endif
+
 		SecureComms_EncryptPayload_DMA((uint32_t*) plaintext, sizeof(plaintext), (uint32_t*) cipherOutput);
 		break;
 	default:
