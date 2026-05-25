@@ -1,10 +1,10 @@
-Debug/
-Release/
+**/Debug/
+**/Release/
 
-*.o
-*.elf
-*.bin
-*.hex
-*.map
-*.lst
-*.su
+**/*.o
+**/*.elf
+**/*.bin
+**/*.hex
+**/*.map
+**/*.lst
+**/*.su

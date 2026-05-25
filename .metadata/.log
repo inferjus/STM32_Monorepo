@@ -1,0 +1,87 @@
+!SESSION 2026-05-25 20:05:33.313 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-25 20:05:36.335
+!MESSAGE Log4j2 initialized with config file D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-25 20:05:43.142
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:05:44.583
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM4
+COM6
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:05:44.587
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:05:44.587
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:05:44.587
+!MESSAGE port: COM6
+!SESSION 2026-05-25 20:06:54.552 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-25 20:06:57.043
+!MESSAGE Log4j2 initialized with config file D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-25 20:07:04.191
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:07:05.694
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM4
+COM6
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:07:05.695
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:07:05.695
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:07:05.695
+!MESSAGE port: COM6
+!SESSION 2026-05-25 20:07:28.163 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-25 20:07:30.681
+!MESSAGE Log4j2 initialized with config file D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-25 20:07:37.903
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:07:39.363
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM4
+COM6
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:07:39.363
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:07:39.364
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-05-25 20:07:39.364
+!MESSAGE port: COM6
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-25 20:08:16.019
+!MESSAGE Indexed 'Nucleo-U083RC_-_RNG_and_AES' (33 sources, 170 headers) in 2,4 sec: 14 914 declarations; 63 624 references; 1 unresolved inclusions; 66 syntax errors; 240 unresolved names (0,3%)
