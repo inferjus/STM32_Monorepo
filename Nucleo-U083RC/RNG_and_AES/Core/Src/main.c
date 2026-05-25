@@ -26,6 +26,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "rngForAes.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,8 +56,6 @@ __IO uint32_t BspButtonState = BUTTON_RELEASED;
 uint8_t plaintext[AES_BUF_SIZE] = "STM32U0 plaintext .";
 uint8_t cipherOutput[AES_BUF_SIZE] = { 0 };
 uint8_t decryptedData[AES_BUF_SIZE] = { 0 };
-
-uint32_t freshIvAes[4] = { 0 };
 
 /* USER CODE END PV */
 
@@ -149,22 +149,23 @@ int main(void)
 #else
       randomSeedReady = 0;
       Security_GetRandomSeed_IT();
-#endif
+#endif //RNG_VIA_INTERRUPT
 
 #ifndef AES_VIA_DMA
-      printf("\r\n");
-      printf("plaintext:%s\r\n", plaintext);
+	printf("\r\n");
+	printf("plaintext:%s\r\n", plaintext);
 
 #ifndef RNG_VIA_INTERRUPT
-		SecureComms_GenerateNewIV(); //randomly generated IV
-		printf("New IV: %08lX%08lX%08lX%08lX\r\n", pInitVectAES[0], pInitVectAES[1], pInitVectAES[2], pInitVectAES[3]);
+	printf("Previous IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
+	SecureComms_GenerateNewIV(); //randomly generated IV
+	printf("New IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
 #endif
 
-      SecureComms_EncryptPayload((uint32_t *)plaintext, sizeof(plaintext), (uint32_t *)cipherOutput);
-      printf("cipherOutput:%s\r\n", cipherOutput);
-      SecureComms_DecryptPayload((uint32_t *)cipherOutput, (uint32_t *)decryptedData, sizeof(decryptedData));
-      printf("decryptedData:%s\r\n", decryptedData);
-      printf("\r\n");
+	SecureComms_EncryptPayload((uint32_t *)plaintext, sizeof(plaintext), (uint32_t *)cipherOutput);
+	printf("cipherOutput:%s\r\n", cipherOutput);
+	SecureComms_DecryptPayload((uint32_t *)cipherOutput, (uint32_t *)decryptedData, sizeof(decryptedData));
+	printf("decryptedData:%s\r\n", decryptedData);
+	printf("\r\n");
 #else
 	switch (aesDmaState) {
 	case AES_DMA_OFF:
@@ -172,9 +173,15 @@ int main(void)
 		printf("plaintext:%s\r\n", plaintext);
 
 #ifndef RNG_VIA_INTERRUPT
+		printf("Previous IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
 		SecureComms_GenerateNewIV(); //randomly generated IV
-		printf("New IV: %08lX%08lX%08lX%08lX\r\n", pInitVectAES[0], pInitVectAES[1], pInitVectAES[2], pInitVectAES[3]);
-#endif
+		printf("New IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
+#else
+		aesDmaState=AES_DMA_WAITING_FOR_IV;
+		printf("Previous IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
+		SecureComms_GenerateNewIV_IT();
+		break;
+#endif //RNG_VIA_INTERRUPT
 
 		SecureComms_EncryptPayload_DMA((uint32_t*) plaintext, sizeof(plaintext), (uint32_t*) cipherOutput);
 		break;
@@ -182,7 +189,7 @@ int main(void)
 		break;
 	}
 
-#endif
+#endif //AES_VIA_DMA
 
     }
 
@@ -190,6 +197,13 @@ int main(void)
 
 #ifdef AES_VIA_DMA
 	switch (aesDmaState) {
+	case AES_DMA_WAITING_FOR_IV:
+		if (freshIv.ready==1) {
+			freshIv.ready=0;
+			printf("New IV: %08lX%08lX%08lX%08lX\r\n", hcryp.Init.pInitVect[0], hcryp.Init.pInitVect[1], hcryp.Init.pInitVect[2], hcryp.Init.pInitVect[3]);
+			SecureComms_EncryptPayload_DMA((uint32_t*)plaintext,  sizeof(plaintext), (uint32_t*)cipherOutput);
+		}
+		break;
 	case AES_DMA_ENCRYPTED:
 		printf("cipherOutput:%s\r\n", cipherOutput);
 		SecureComms_DecryptPayload_DMA((uint32_t*) cipherOutput, (uint32_t*) decryptedData, sizeof(decryptedData));
@@ -202,7 +216,7 @@ int main(void)
 	default:
 		break;
 	}
-#endif
+#endif //AES_VIA_DMA
 
 #ifdef RNG_VIA_INTERRUPT
     if (randomSeedReady == 1) {
@@ -210,7 +224,7 @@ int main(void)
 	  printf("Wygenerowano seed: %lu\r\n", randomSeed);
 	  printf("\r\n\r\n");
 	}
-#endif
+#endif //RNG_VIA_INTERRUPT
 
 
     /* USER CODE END WHILE */

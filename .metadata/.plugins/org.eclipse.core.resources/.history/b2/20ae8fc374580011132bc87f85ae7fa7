@@ -1,0 +1,25 @@
+/*
+ * rngForAes.c
+ *
+ *  Created on: 25 maj 2026
+ *      Author: Nauka
+ */
+
+#include "rngForAes.h"
+
+
+void SecureComms_GenerateNewIV(void) {
+
+	size_t pInitVectAESSize = sizeof(hcryp.Init.pInitVect);
+
+	for (int i = 0; i < pInitVectAESSize; i++) {
+		uint32_t randomVal = 0;
+
+		if (HAL_RNG_GenerateRandomNumber(&hrng, &randomVal) == HAL_OK) {
+			hcryp.Init.pInitVect[i] = randomVal;
+		}
+		else {
+			Error_Handler();
+		}
+	}
+}

@@ -8,6 +8,9 @@
 #include "rngForAes.h"
 
 
+RandomIv_t freshIv={0};
+
+
 void SecureComms_GenerateNewIV(void) {
 
 	size_t pInitVectAESSize = sizeof(hcryp.Init.pInitVect);
@@ -22,4 +25,13 @@ void SecureComms_GenerateNewIV(void) {
 			Error_Handler();
 		}
 	}
+}
+
+
+HAL_StatusTypeDef SecureComms_GenerateNewIV_IT(void) {
+
+	freshIv.generatingStage=0;
+	freshIv.ready=0;
+
+	return HAL_RNG_GenerateRandomNumber_IT(&hrng);
 }

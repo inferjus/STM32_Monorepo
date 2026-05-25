@@ -13,7 +13,17 @@
 #include "aes.h"
 
 
+typedef struct {
+	uint32_t ivAes[sizeof(pInitVectAES)];
+	uint8_t generatingStage;
+	uint8_t ready;
+} RandomIv_t;
+
+extern RandomIv_t freshIv;
+
+
 void SecureComms_GenerateNewIV(void);
+HAL_StatusTypeDef SecureComms_GenerateNewIV_IT(void);
 
 
 #endif /* INC_RNGFORAES_H_ */

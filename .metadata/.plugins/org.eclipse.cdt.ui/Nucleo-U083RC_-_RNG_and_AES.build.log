@@ -1,18 +1,17 @@
-21:10:30 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
+23:10:28 **** Incremental Build of configuration Debug for project Nucleo-U083RC_-_RNG_and_AES ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/rngForAes.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32U083xx -c -I../Core/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc -I../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32U0xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32U0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rngForAes.d" -MT"Core/Src/rngForAes.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rngForAes.o"
 arm-none-eabi-gcc -o "Nucleo-U083RC_-_RNG_and_AES.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\Users\Nauka\STM32CubeIDE\STM32_Monorepo\Nucleo-U083RC\RNG_and_AES\STM32U083RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo-U083RC_-_RNG_and_AES.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Nucleo-U083RC_-_RNG_and_AES.elf
  
 arm-none-eabi-size  Nucleo-U083RC_-_RNG_and_AES.elf 
 arm-none-eabi-objdump -h -S Nucleo-U083RC_-_RNG_and_AES.elf  > "Nucleo-U083RC_-_RNG_and_AES.list"
    text	   data	    bss	    dec	    hex	filename
-  30604	    188	   2476	  33268	   81f4	Nucleo-U083RC_-_RNG_and_AES.elf
+  30956	    188	   2540	  33684	   8394	Nucleo-U083RC_-_RNG_and_AES.elf
 Finished building: default.size.stdout
  
 Finished building: Nucleo-U083RC_-_RNG_and_AES.list
  
 
-21:10:31 Build Finished. 0 errors, 0 warnings. (took 690ms)
+23:10:28 Build Finished. 0 errors, 0 warnings. (took 692ms)
 

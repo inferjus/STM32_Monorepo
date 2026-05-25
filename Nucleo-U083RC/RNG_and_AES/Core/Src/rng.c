@@ -22,6 +22,9 @@
 
 /* USER CODE BEGIN 0 */
 
+#include "rngForAes.h"
+
+
 volatile uint32_t randomSeed = 0;
 volatile uint8_t randomSeedReady = 0;
 
@@ -127,7 +130,7 @@ uint32_t Security_GetRandomSeed(void) {
 
 /* --- */
 
-uint32_t Security_GetRandomSeed_IT(void) {
+HAL_StatusTypeDef Security_GetRandomSeed_IT(void) {
 
 	HAL_StatusTypeDef status = HAL_RNG_GenerateRandomNumber_IT(&hrng);
 
@@ -140,8 +143,27 @@ uint32_t Security_GetRandomSeed_IT(void) {
 
 void HAL_RNG_ReadyDataCallback(RNG_HandleTypeDef *hrng, uint32_t random32bit) {
 	if (hrng->Instance == RNG) {
-		randomSeed = random32bit;
-		randomSeedReady = 1;
+
+		if(aesDmaState==AES_DMA_WAITING_FOR_IV) {
+			//save new random number as part of incoming IV
+			if (freshIv.generatingStage<sizeof(pInitVectAES)) {
+				hcryp.Init.pInitVect[freshIv.generatingStage]=random32bit;
+				freshIv.generatingStage++;
+
+				//generate next number if needed
+				if (freshIv.generatingStage<sizeof(pInitVectAES)) {
+					HAL_RNG_GenerateRandomNumber_IT(hrng);
+				}
+				else {
+					freshIv.ready=1;
+				}
+			}
+
+		}
+		else {
+			randomSeed = random32bit;
+			randomSeedReady = 1;
+		}
 	}
 }
 
